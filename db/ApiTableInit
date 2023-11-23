@@ -1,0 +1,33 @@
+-- auto-generated definition
+create table api_log
+(
+    idx         double unsigned auto_increment        primary key,
+    req_api_key varchar(200)                           not null,
+    req_ip      varchar(100)                           not null,
+    req_method  varchar(10)                            not null,
+    req_url     varchar(512)                           not null,
+    req_param   varchar(512) default ''                null,
+    req_body    varchar(512)                           null,
+    req_header  longtext                               not null,
+    res_status  int                                    not null,
+    res_data    longtext                               not null,
+    create_at   timestamp    default CURRENT_TIMESTAMP null
+);
+
+-- auto-generated definition
+create table photo_gallery
+(
+    gal_content_id           bigint unsigned not null
+        primary key,
+    gal_content_type_id      bigint unsigned not null,
+    gal_title                varchar(200)    not null,
+    gal_web_image_url        varchar(200)    not null,
+    gal_createdtime          bigint unsigned not null,
+    gal_modifiedtime         bigint unsigned not null,
+    gal_photography_month    bigint unsigned not null,
+    gal_photography_location varchar(200)    not null,
+    gal_photographer         varchar(200)    not null,
+    gal_search_keyword       varchar(200)    not null
+);
+
+
